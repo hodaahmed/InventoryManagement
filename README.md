@@ -1,78 +1,81 @@
-# InventoryManagement
-Overview
-The Inventory Management System is a WPF-based desktop application for managing inventory items. It allows users to perform CRUD operations (Create, Read, Update, Delete) on inventory items such as adding new items, editing existing items, deleting items, and searching/filtering through inventory data. The application uses a database to persist the inventory data and follows a MVVM (Model-View-ViewModel) design pattern.
-==========================================================================================================
-Features
-Add New Item: Users can add new inventory items with details like Name, Category, and Stock Quantity.
-Edit Item: Users can modify the details of existing items.
-Delete Item: Users can delete inventory items from the system.
-Search: Users can search inventory items based on name.
-Filter by Stock: Users can filter items by stock levels, such as "Low Stock" or "In Stock".
-Data Persistence: The application saves data to an SQL database.
-=============================================================================================================
-Technologies Used
-WPF (Windows Presentation Foundation): User interface (UI) framework.
-MVVM (Model-View-ViewModel): Design pattern for separation of concerns.
-C#: Programming language.
-Entity Framework: ORM used for database interactions.
-SQL Server: Database system used to store inventory data.
-Dependency Injection (DI): Used to inject services into the ViewModel.
-============================================================================================================
-Installation
-Prerequisites
-Before you begin, make sure you have the following installed:
+📦 Inventory Management System
+======================================================================================================================================================================
+🖥️ Overview
+=======================================
+The Inventory Management System is a desktop application built with WPF (Windows Presentation Foundation) for managing inventory items. It allows users to perform CRUD operations (Create, Read, Update, Delete) on inventory data, including filtering and searching inventory based on stock levels and item names. The application uses a SQL database for persistent storage and follows the MVVM (Model-View-ViewModel) design pattern.
+================================================================================================
+🚀 Features
+==================================================
+🔹 Add New Item: Add new inventory items with details like name, category, and stock quantity.<br/>
+🔹 Edit Item: Edit details of existing items.<br/>
+🔹 Delete Item: Remove inventory items.<br/>
+🔹 Search Items: Search for items by name.<br/>
+🔹 Stock Filtering: Filter inventory based on stock levels (e.g., Low Stock or In Stock).<br/>
+🔹 Data Persistence: All changes are saved to a database.<br/>
+<br/><br/>
+⚙️ Technologies Used
+================================================
+💻 WPF (Windows Presentation Foundation) – User interface framework.<br/>
+💡 MVVM (Model-View-ViewModel) – Design pattern for separation of concerns.<br/>
+🐱 C# – Programming language used for the application logic.<br/>
+🔗 Entity Framework – ORM used for database operations.<br/>
+💾 SQL Server – Database for storing inventory data.<br/>
+🔌 Dependency Injection (DI) – Used for service management.<br/>
+<br/><br/>
+🛠️ Installation Guide
+===============================================
+🛑 Prerequisites
+===================================
+Before you begin, ensure that the following tools are installed:<br/>
 
-.NET Framework 
-Visual Studio 2019 or later
-SQL Server (or use a local instance with SQL Server Management Studio)
-Clone the Repository
-Clone this repository to your local machine:
+🔹 .NET Framework <br/>
+🔹Visual Studio 2019+.<br/>
+🔹SQL Server or a local SQL Server instance (use SQL Server Management Studio if needed).<br/>
+<br/><br/>
+📥 Clone the Repository
+=================================
+Clone this repository to your local machine using the following command:
 
 bash
 Copy code
 git clone https://github.com/yourusername/InventoryManagement.git
-Open the solution (InventoryManagement.sln) in Visual Studio.
-==========================================================
-Set up the Database
-Open SQL Server Management Studio (SSMS).
+<br/><br/>
+⚙️ Set up the Database
+==============================
+🔹Create Database: Open SQL Server Management Studio (SSMS) and create a new database (e.g., InventoryDb).<br/>
 
-Create a new database for the application (e.g., InventoryDb).
-
-Update the connection string in App.config or appsettings.json with the correct database credentials:
+🔹Update Connection String: In the project, update the connection string in App.config or appsettings.json:<br/>
 
 xml
 Copy code
 <connectionStrings>
     <add name="InventoryDb" connectionString="Server=localhost;Database=InventoryDb;Integrated Security=True;" providerName="System.Data.SqlClient" />
 </connectionStrings>
-Run the SQL script to create necessary tables (if not done automatically).
-=============================================================================================================
-Running the Application
-Press F5 or click Start in Visual Studio to run the application.
-The main window will open with options to Add, Edit, Delete, or Search inventory items.
-Interact with the UI to manage your inventory.
-How It Works
-Architecture
-The application is structured using the MVVM (Model-View-ViewModel) design pattern:
-
-Model: Represents the data and business logic (e.g., InventoryItem, InventoryDatabaseService).
-View: The UI (WPF XAML pages, such as MainWindow.xaml, AddItemWindow.xaml).
-ViewModel: The middle layer that binds the View and Model (e.g., InventoryViewModel).
-ViewModel and Commands
-AddItemCommand: Binds to the "Add New Item" button to trigger the action of adding a new item to the inventory.
-EditItemCommand: Allows for editing existing inventory items.
-DeleteItemCommand: Handles the deletion of inventory items.
-SearchCommand: Allows searching inventory items based on text input.
-StockFilter: Filters inventory items by stock levels.
-Dependency Injection
-The application uses Dependency Injection (DI) to inject services such as IInventoryDatabaseService into the ViewModel. This ensures loose coupling between components and facilitates testing and maintenance.
-=====================================================================================================================
-Contributing
-We welcome contributions to this project! If you find a bug or have a feature request, feel free to create an issue or submit a pull request.
-=================================================================================================================
-How to Contribute
-Fork the repository.
-Create a new branch for your changes (git checkout -b feature/new-feature).
-Make your changes and commit them (git commit -am 'Add new feature').
-Push to the branch (git push origin feature/new-feature).
-Create a new pull request.
+Run Database Script: Execute the necessary SQL scripts to create tables (if not done automatically).<br/>
+<br/><br/>
+🚀 Running the Application
+=====================================
+🔹Open the solution (InventoryManagement.sln) in Visual Studio.<br/>
+🔹Press F5 or click Start to run the application.<br/>
+🔹The main window will open with options to Add, Edit, Delete, Search, and Filter inventory items.<br/>
+🔹Interact with the UI to manage your inventory.<br/>
+  <br/><br/>
+🧑‍💻 How It Works
+=======================================
+Architecture: MVVM Pattern <br/>
+This application follows the MVVM (Model-View-ViewModel) design pattern for clear separation of concerns:
+<br/>
+🔹Model: Represents the data and business logic (e.g., InventoryItem, InventoryDatabaseService).<br/>
+🔹View: The UI components (e.g., MainWindow.xaml, AddItemWindow.xaml).<br/>
+🔹ViewModel: Acts as a mediator between the View and Model (e.g., InventoryViewModel).<br/>
+🔹ViewModel and Commands<br/>
+   🔹AddItemCommand: Executes the command to add a new item to the inventory.<br/>
+   🔹EditItemCommand: Allows for editing existing inventory items.<br/>
+   🔹DeleteItemCommand: Handles the deletion of inventory items.<br/>
+   🔹SearchCommand: Enables the search functionality for inventory items.<br/>
+   🔹StockFilter: Filters the inventory based on stock levels.<br/>
+<br/><br/>
+🛠️ Dependency Injection
+==================================================================================
+This application uses Dependency Injection (DI) to decouple components and manage dependencies. Services like IInventoryDatabaseService are injected into the ViewModel, making the code more modular and testable.
+<br/><br/>
